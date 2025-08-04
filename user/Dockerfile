@@ -6,8 +6,8 @@ ENV MONGO=true \
 COPY package.json .
 COPY *.js .
 RUN npm install
-RUN apt-get update \
-    && apt-get install net-tools git \
+RUN apt-get update -y \
+    && apt-get install net-tools git -y \
     && apt-get clean
 CMD ["node", "server.js"]
 
